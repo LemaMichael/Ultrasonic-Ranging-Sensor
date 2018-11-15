@@ -94,10 +94,11 @@ float getDistance()
     delayMicroseconds(10);
     PORTD &= ~(1<<TRIG);
     
-    // sound travels at 343 m/s which is 0.0343 cm/us
+    // sound travels at 343 m/s which is 0.0343 cm/us or 0.0135039 inch/us
     // distance = time*velocity
     // we need to divide result by 2 because sound travels
     // to object and back so the incoming pulse is twice longer
+    // distance = pulseTime*0.0135039/2; // result in inch
     distance = pulseTime*0.0343/2; // result in cm
     return distance;
 }
